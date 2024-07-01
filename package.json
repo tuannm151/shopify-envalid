@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/af/envalid"
+    "url": "https://github.com/BSSCommerce/shopify-envalid"
   },
   "keywords": [
     ".env",
@@ -46,7 +46,7 @@
     "ts-jest": "29.1.2",
     "typescript": "5.2.2"
   },
-  "author": "Aaron Franks",
+  "author": "BSSCommerce",
   "license": "MIT",
   "prettier": {
     "printWidth": 100,
