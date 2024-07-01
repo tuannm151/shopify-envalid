@@ -59,5 +59,6 @@
       "pre-commit": "yarn lint",
       "pre-push": "yarn test"
     }
-  }
+  },
+  "packageManager": "yarn@4.3.1"
 }
