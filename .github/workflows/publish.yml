@@ -1,4 +1,4 @@
-name: publish release
+name: Publish Release
 
 on:
   release:
@@ -7,28 +7,24 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [18, 20]
-
     steps:
       - uses: actions/checkout@v3
-
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: yarn
-
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'yarn'
       - name: Install dependencies
         run: yarn --frozen-lockfile
-
       - name: ESLint
         run: yarn lint
-
       - name: Unit tests
         run: yarn test
-      - run: yarn npm publish
+      - name: Publish
+        run: yarn npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
